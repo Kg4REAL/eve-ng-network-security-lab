@@ -1,0 +1,79 @@
+#Le serveur -> phede 1
+#Le domain -> cps
+phede-1#show vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 2
+VTP Domain Name                 : cps
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : aabb.cc80.1000
+Configuration last modified by 192.168.10.2 at 12-20-25 12:22:24
+Local updater ID is 192.168.10.2 on interface Vl10 (lowest numbered VLAN interface found)
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 9
+Configuration Revision            : 5
+MD5 digest                        : 0x67 0x06 0xF8 0x2A 0x15 0x61 0x11 0x9A 
+                                    0x34 0x23 0x36 0x0A 0x92 0x14 0x3E 0x06 
+-> les autres switch sont les clients
+
+phede-2#show vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 2
+VTP Domain Name                 : cps
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : aabb.cc80.2000
+Configuration last modified by 192.168.10.2 at 12-20-25 12:22:24
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Client
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 9
+Configuration Revision            : 5
+MD5 digest                        : 0x67 0x06 0xF8 0x2A 0x15 0x61 0x11 0x9A 
+                                    0x34 0x23 0x36 0x0A 0x92 0x14 0x3E 0x06 
+phede-2#
+
+sw-1#show vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 2
+VTP Domain Name                 : cps
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : aabb.cc80.6000
+Configuration last modified by 192.168.10.2 at 12-20-25 12:22:24
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Client
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 9
+Configuration Revision            : 5
+MD5 digest                        : 0x67 0x06 0xF8 0x2A 0x15 0x61 0x11 0x9A 
+                                    0x34 0x23 0x36 0x0A 0x92 0x14 0x3E 0x06 
+sw-1#
+
+sw-2#show vtp status 
+VTP Version capable             : 1 to 3
+VTP version running             : 2
+VTP Domain Name                 : cps
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : aabb.cc80.9000
+Configuration last modified by 192.168.10.2 at 12-20-25 12:22:24
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Client
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 9
+Configuration Revision            : 5
+MD5 digest                        : 0x67 0x06 0xF8 0x2A 0x15 0x61 0x11 0x9A 
+                                    0x34 0x23 0x36 0x0A 0x92 0x14 0x3E 0x06 
+sw-2#
+

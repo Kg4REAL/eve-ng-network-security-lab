@@ -1,0 +1,133 @@
+# EtherChannel verification – LACP
+
+! ==============================
+! Device: phede-1
+! Role: Distribution Switch (L3)
+! STP Root: VLAN 1,10,20
+! HSRP Active: VLAN 10,20
+
+  phede-1#show etherchannel summary 
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      N - not in use, no aggregation
+        f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        m - not in use, port not aggregated due to minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+        A - formed by Auto LAG
+
+
+Number of channel-groups in use: 2
+Number of aggregators:           2
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+1      Po1(SU)         LACP      Et0/0(P)    Et0/1(P)    
+4      Po4(SU)         LACP      Et0/2(P)    Et0/3(P)    
+! ==============================
+
+
+! ==============================
+! Device: phede-2
+! Role: Distribution Switch (L3)
+! STP Root: VLAN 30,40
+! HSRP Active: VLAN 30,40
+
+ phede-2#show etherchannel summary
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      N - not in use, no aggregation
+        f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        m - not in use, port not aggregated due to minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+        A - formed by Auto LAG
+
+
+Number of channel-groups in use: 2
+Number of aggregators:           2
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+2      Po2(SU)         LACP      Et0/2(P)    Et0/3(P)    
+3      Po3(SU)         LACP      Et0/0(P)    Et0/1(P)    
+          
+
+! ==============================
+
+
+! ==============================
+! Device: sw-1
+! Role: Access Switch (L2)
+! Connected to: phede-1 & phede-2 via EtherChannel
+ 
+ sw-1#sho etherchannel summary 
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      N - not in use, no aggregation
+        f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        m - not in use, port not aggregated due to minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+        A - formed by Auto LAG
+
+
+Number of channel-groups in use: 2
+Number of aggregators:           2
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+1      Po1(SU)         LACP      Et0/0(P)    Et0/1(P)    
+2      Po2(SU)         LACP      Et0/2(P)    Et0/3(P)    
+          
+ 
+! ==============================
+
+! ==============================
+! Device: sw-2
+! Role: Access Switch (L2)
+! Connected to: phede-1 & phede-2 via EtherChannel
+
+ sw-2#show etherchannel summary 
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      N - not in use, no aggregation
+        f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        m - not in use, port not aggregated due to minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+        A - formed by Auto LAG
+
+
+Number of channel-groups in use: 2
+Number of aggregators:           2
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+3      Po3(SU)         LACP      Et0/0(P)    Et0/1(P)    
+4      Po4(SU)         LACP      Et0/2(P)    Et0/3(P)    
+! ==============================
