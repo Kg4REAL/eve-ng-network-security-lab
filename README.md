@@ -21,7 +21,7 @@ This is a **complete network security lab** built in **EVE-NG** that simulates a
 
 ### Topology Overview
 
-![Network Topology](network-diagram.png)
+![Network Topology](network-diagram.png.png)
 
 The infrastructure is designed with a hierarchical campus network structure:
 
