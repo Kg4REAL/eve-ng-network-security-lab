@@ -20,29 +20,10 @@ This is a **complete network security lab** built in **EVE-NG** that simulates a
 ## 🏗️ Network Architecture
 
 ### Topology Overview
-```
-┌─────────────────────────────────────────────��───────┐
-│              CAMPUS NETWORK (EVE-NG)                │
-├─────────────────────────────────────────────────────┤
-│                                                     │
-│  ┌──────────────┐              ┌──────────────┐   │
-│  │   Phede-1    │─ LACP ─────│   Phede-2    │   │
-│  │  (L3 Switch) │ (HSRP)    │  (L3 Switch) │   │
-│  └──────┬───────┘              └──────┬───────┘   │
-│         │                             │            │
-│    ┌────┴────┬────┐          ┌────┬────┴────┐    │
-│    │         │    │          │    │         │    │
-│ ┌──▼──┐  ┌──▼──┐ │      ┌───▼─┐ │ ┌──▼──┐ │    │
-│ │ SW1 │  │ SW2 │ │      │ SW3 │ │ │ SW4 │ │    │
-│ │ (L2)│  │ (L2)│ │      │ (L2)│ │ │ (L2)│ │    │
-│ └──┬──┘  └──┬──┘ │      └─┬──┘ │ │ └──┬──┘ │    │
-│    │        │    │        │    │ │    │    │    │
-│  Clients  Clients Kali  Clients │  Clients │    │
-│    10,20,30  40   (GUEST)20,30  │  10,20,30│   │
-│                                 │          │    │
-│  VLANs: 10(RG), 20(MARKETING), 30(DRH), 40(GUEST)
-└─────────────────────────────────────────────────────┘
-```
+
+![Network Topology](network-diagram.png)
+
+The infrastructure is designed with a hierarchical campus network structure:
 
 ### Key Components
 
