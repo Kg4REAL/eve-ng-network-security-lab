@@ -282,14 +282,6 @@ This lab is for **educational purposes only**. Use responsibly in authorized env
 
 ---
 
-## 🚀 Next Steps
-
-- [ ] Add video walkthrough of attack scenarios
-- [ ] Create Dockerfile for quick lab spin-up
-- [ ] Add advanced scenarios (multi-stage attacks, detection evasion)
-- [ ] Create quiz for each section
-- [ ] Publish writeups on Medium/Dev.to
-
 ---
 
 **Last updated**: May 17, 2026  
